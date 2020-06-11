@@ -35,6 +35,9 @@
     <link href="{{ asset  ('public/admin/lib/Ionicons/css/ionicons.css ')}}" rel="stylesheet">
     <link href="{{ asset  ('public/admin/lib/perfect-scrollbar/css/perfect-scrollbar.css ')}}" rel="stylesheet">
     <link href="{{ asset  ('public/admin/lib/rickshaw/rickshaw.min.css')}}" rel="stylesheet">
+    <link href="{{ asset  ('public/admin/lib/highlightjs/github.css')}}" rel="stylesheet">
+    <link href="{{ asset  ('public/admin/lib/datatables/jquery.dataTables.css')}}" rel="stylesheet">
+    <link href="{{ asset  ('public/admin/lib/select2/css/select2.min.css')}}" rel="stylesheet">
 
     <!-- Starlight CSS -->
     <link rel="stylesheet" href="{{ asset ('public/admin/css/starlight.css')}}">
@@ -374,8 +377,36 @@
     <script src="{{ asset ('public/admin/lib/Flot/jquery.flot.resize.js')}}"></script>
     <script src="{{ asset ('public/admin/lib/flot-spline/jquery.flot.spline.js')}}"></script>
 
+    <script>
+        $(function(){
+          'use strict';
+  
+          $('#datatable1').DataTable({
+            responsive: true,
+            language: {
+              searchPlaceholder: 'Search...',
+              sSearch: '',
+              lengthMenu: '_MENU_ items/page',
+            }
+          });
+  
+          $('#datatable2').DataTable({
+            bLengthChange: false,
+            searching: false,
+            responsive: true
+          });
+  
+          // Select2
+          $('.dataTables_length select').select2({ minimumResultsForSearch: Infinity });
+  
+        });
+      </script>
+
+
     <script src="{{ asset ('public/admin/js/starlight.js')}}"></script>
     <script src="{{ asset ('public/admin/js/ResizeSensor.js')}}"></script>
     <script src="{{ asset ('public/admin/js/dashboard.js')}}"></script>
+    <script src="{{ asset  ('public/admin/lib/datatables/jquery.dataTables.js')}}"></script>
+    <script src="{{ asset  ('public/admin/lib/datatables-responsive/dataTables.responsive.js')}}"></script>
   </body>
 </html>
